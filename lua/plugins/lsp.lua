@@ -37,7 +37,8 @@ end
 mason_lspconfig.setup({
   ensure_installed = {
     "lua_ls", "pyright", "tsserver", "rust_analyzer", "gopls",
-    "jsonls", "yamlls", "html", "cssls", "bashls", "clangd",
+    "jsonls", "yamlls", "html", "cssls", "bashls",
+    -- "clangd",
   },
   automatic_installation = true,
 })
