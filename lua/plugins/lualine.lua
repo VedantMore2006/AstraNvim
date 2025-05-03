@@ -29,24 +29,6 @@ local function ml_training_status()
   return training and "🧠 Training" or ""
 end
 
--- Theme configuration for Tokyo Night
-local theme = {
-  normal = {
-    a = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" },
-    b = { bg = "#3b4261", fg = "#c0caf5" },
-    c = { bg = "#1a1b26", fg = "#a9b1d6" },
-  },
-  insert = { a = { bg = "#9ece6a", fg = "#1a1b26", gui = "bold" } },
-  visual = { a = { bg = "#bb9af7", fg = "#1a1b26", gui = "bold" } },
-  replace = { a = { bg = "#f7768e", fg = "#1a1b26", gui = "bold" } },
-  command = { a = { bg = "#e0af68", fg = "#1a1b26", gui = "bold" } },
-  inactive = {
-    a = { bg = "#1a1b26", fg = "#3b4261" },
-    b = { bg = "#1a1b26", fg = "#3b4261" },
-    c = { bg = "#1a1b26", fg = "#3b4261" },
-  },
-}
-
 -- Lualine Configuration
 require("lualine").setup({
   options = {
@@ -55,7 +37,7 @@ require("lualine").setup({
     section_separators = { left = "", right = "" },
     disabled_filetypes = {
       statusline = { "alpha", "dashboard", "starter" },
-      winbar = { "ipynb" },
+    --  winbar = { "ipynb" },
     },
     globalstatus = true,
     always_divide_middle = true,
