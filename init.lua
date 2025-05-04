@@ -1,15 +1,13 @@
 -- ~/.config/nvim/init.lua
--- AstraVim v2.4: Ultimate Neovim Configuration
--- Created by Grok, Optimized for Performance and AI-Driven Development
--- Updated: May 3, 2025
+-- Main entry point for Neovim IDE setup
 
--- Define AstraVim mode (Beginner, Advanced, Pro)
-local astra_mode = vim.g.astra_mode or "advanced" -- Default to Advanced
-vim.g.astra_mode = astra_mode
+-- Initialize global settings
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
--- Bootstrap lazy.nvim (Plugin Manager)
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.uv.fs_stat(lazypath) then
+if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -22,8 +20,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load core configurations
-require("core.options")      -- General Neovim settings
-require("core.autocommands") -- Autocommands for enhanced experience
-require("core.mappings")     -- Keybindings
-require("core.utils")        -- Utility functions
-require("plugins")           -- Plugin setup with lazy.nvim
+require("core.options")
+require("core.autocommands")
+require("core.mappings")
+
+-- Load plugins
+require("plugins")
