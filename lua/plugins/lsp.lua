@@ -12,6 +12,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 end
+require("lsp-status").register_progress()
 
 require("mason-lspconfig").setup_handlers({
   function(server_name)

@@ -55,9 +55,11 @@ lualine.setup {
 
     -- Right side sections
     lualine_x = {
-      { 'filetype', icon_only = false }, -- Show file type with icon
-      { 'encoding', show_bomb = true }, -- Show encoding (e.g., utf-8) and BOM if present
+      { 'filetype', icon_only = false },
+      { 'encoding', show_bomb = true },
+      { 'lsp_status', icon = '' }, -- Show active LSP servers
     },
+
     lualine_y = { 'progress' }, -- Show progress (percentage through file)
     lualine_z = { 'location' }, -- Show line:column location
   },
@@ -71,7 +73,21 @@ lualine.setup {
     lualine_z = {},
   },
   tabline = {}, -- Not using tabline for now
-  winbar = {}, -- Not using winbar for now
-  inactive_winbar = {},
-  extensions = { 'telescope', 'toggleterm', 'quickfix' }, -- Enable extensions for your plugins
+  winbar = {
+    lualine_a = { 'filename' },
+    lualine_b = { 'diagnostics' },
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {},
+  },
+  inactive_winbar = {
+    lualine_a = { 'filename' },
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {},
+  },
+  extensions = { 'toggleterm', 'quickfix', 'nvim-tree' }, -- Enable extensions for toggleterm, quickfix, and nvim-tree
 }

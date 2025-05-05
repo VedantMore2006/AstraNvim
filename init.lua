@@ -16,13 +16,13 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable",
     lazypath,
   })
-end
-vim.opt.rtp:prepend(lazypath)
+  end
+  vim.opt.rtp:prepend(lazypath)
 
--- Load core configurations
-require("core.options")
-require("core.autocommands")
-require("core.mappings")
+  -- Load core configurations
+  require("core.options")
+  require("core.autocommands")
+  require("core.mappings")
 
--- Load plugins
-require("plugins")
+  -- Load plugins
+  require("plugins.plugins")
